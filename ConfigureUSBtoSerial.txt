@@ -1,1 +1,12 @@
 # Configure usb to serial
+Source: https://stackoverflow.com/questions/5347962/how-do-i-connect-to-a-terminal-to-a-serial-to-usb-device-on-ubuntu-10-10-maveri
+
+1 - attach usb to serial device to computer
+2 - find the usbname with this command:
+		dmesg | grep tty #mine was ttyUSB0
+3 - Then try to run minicom with "sudo minicom -s", go to "Serial port setup" and change the first line to /dev/ttyUSB0.
+4 - give permissions to usb to serial device:
+        sudo chmod 666 /dev/ttyUSB0
+
+Now every thing is fine.
+
